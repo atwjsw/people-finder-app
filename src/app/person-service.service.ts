@@ -6,7 +6,6 @@ import {Person} from './person';
 @Injectable({
   providedIn: 'root'
 })
-// @Injectable()
 export class PersonService {
 
   private personsUrl: string;

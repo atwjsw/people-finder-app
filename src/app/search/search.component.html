@@ -10,6 +10,7 @@
     <button
       class="btn btn-success"
       type="button"
+      [disabled]="isEmptyFirstName()"
       (click)="findByFirstName()">Search
     </button>
     <div class="form-group">
@@ -21,8 +22,28 @@
     <button
       class="btn btn-success"
       type="button"
+      [disabled]="isEmptyLastName()"
       (click)="findByLastName()">Search
     </button>
   </div>
 </div>
+  <div class="card col-md-6">
+    <div class="card-body">
+  <table *ngIf="persons?.length > 0" class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th>First Name</th>
+      <th>Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.firstName }}</td>
+      <td>{{ person.lastName }}</td>
+    </tr>
+    </tbody>
+  </table>
+  <h5 *ngIf="persons?.length === 0">No person found</h5>
+    </div>
+  </div>
 </div>

@@ -20,15 +20,23 @@ export class SearchComponent implements OnInit {
 
   findByLastName() {
     console.log(this.lastName);
-    this.personService.findByLastName(this.lastName).subscribe(res => {
+    this.personService.findByLastName(this.lastName.trim()).subscribe(res => {
       this.persons = res;
     });
   }
 
   findByFirstName() {
     console.log(this.firstName);
-    this.personService.findByLastName(this.firstName).subscribe(res => {
+    this.personService.findByFirstName(this.firstName).subscribe(res => {
       this.persons = res;
     });
+  }
+
+  isEmptyLastName() {
+    return !this.lastName || this.lastName.trim().length === 0;
+  }
+
+  isEmptyFirstName() {
+    return !this.firstName || this.firstName.trim().length === 0;
   }
 }
