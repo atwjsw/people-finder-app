@@ -2,17 +2,20 @@ import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 import {Observable} from 'rxjs';
 import {Person} from './person';
+import {environment} from '../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
 
+  // private personsUrl: string;
+  private baseUrl = environment.baseUrl;
   private personsUrl: string;
 
   constructor(private http: HttpClient) {
     // this.personsUrl = 'http://localhost:8080/persons';
-    this.personsUrl = 'https://peoplefinder-backend.herokuapp.com/persons';
+    this.personsUrl = this.baseUrl + '/persons';
   }
 
   public findAll(): Observable<Person[]> {
