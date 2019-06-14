@@ -1,4 +1,4 @@
-# Pfapp
+# Pfapp [![Build Status](https://travis-ci.org/atwjsw/people-finder-app.svg?branch=master)](https://travis-ci.org/atwjsw/people-finder-app)
 
 This application is the frontend of People finder.
 
