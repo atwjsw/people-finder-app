@@ -10,6 +10,7 @@ import { SearchComponent } from './search/search.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { PersonListComponent } from './person-list/person-list.component';
+import {PageNotFoundComponent} from './page-not-found/page-not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { PersonListComponent } from './person-list/person-list.component';
     ListComponent,
     SearchComponent,
     PersonListComponent,
+    PageNotFoundComponent
   ],
   imports: [
     BrowserModule,

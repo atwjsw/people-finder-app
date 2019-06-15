@@ -1,6 +1,4 @@
-<div class="container-fluid">
-  <div class="card col-md-6">
-    <div class="card-body">
+  <div class="col-md-6">
       <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" [(ngModel)]="firstName"
@@ -8,10 +6,10 @@
                required>
       </div>
       <button
-        class="btn btn-success"
+        class="btn btn-primary"
         type="button"
         [disabled]="isEmptyFirstName()"
-        (click)="findByFirstName()">Search
+        (click)="findByFirstName()">Search By First Name
       </button>
       <div class="form-group">
         <label for="firstName">Last Name</label>
@@ -20,16 +18,15 @@
                required>
       </div>
       <button
-        class="btn btn-success"
+        class="btn btn-primary"
         type="button"
         [disabled]="isEmptyLastName()"
-        (click)="findByLastName()">Search
+        (click)="findByLastName()">Search by Last Name
       </button>
     </div>
-  </div>
+
   <div *ngIf="loading" class="spinner"></div>
-  <div class="card col-md-6">
+  <div class="col-md-6">
     <app-person-list *ngIf="persons?.length > 0" [persons]="persons"></app-person-list>
     <h5 *ngIf="persons?.length === 0">No person found</h5>
   </div>
-</div>

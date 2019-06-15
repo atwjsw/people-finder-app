@@ -17,7 +17,7 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.personService.findAll().subscribe(res => {
-        this.persons = res;
+            this.persons = res;
         this.loading = false;
     });
   }

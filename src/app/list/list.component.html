@@ -1,6 +1,4 @@
-<div class="container-fluid">
+<div class="col-md-12">
   <div *ngIf="loading" class="spinner"></div>
-  <div class="card col-md-6">
-    <app-person-list *ngIf="persons" [persons]="persons"></app-person-list>
-  </div>
+  <app-person-list *ngIf="persons" [persons]="persons"></app-person-list>
 </div>
