@@ -22,6 +22,7 @@ export class SearchComponent implements OnInit {
     this.loading = true;
     this.personService.findByLastName(this.lastName.trim()).subscribe(res => {
         this.persons = res;
+        this.loading = false;
     });
   }
 
@@ -29,6 +30,7 @@ export class SearchComponent implements OnInit {
     this.loading = true;
     this.personService.findByFirstName(this.firstName).subscribe(res => {
         this.persons = res;
+        this.loading = false;
     });
   }
 
