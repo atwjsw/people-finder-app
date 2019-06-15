@@ -9,6 +9,7 @@ import { ListComponent } from './list/list.component';
 import { SearchComponent } from './search/search.component';
 import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
+import { PersonListComponent } from './person-list/person-list.component';
 
 @NgModule({
   declarations: [
@@ -17,6 +18,7 @@ import {HttpClientModule} from '@angular/common/http';
     HomeComponent,
     ListComponent,
     SearchComponent,
+    PersonListComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Person} from '../person';
-import {PersonService} from '../person-service.service';
+import {PersonService} from '../person.service';
 
 @Component({
   selector: 'app-list',
@@ -16,9 +16,9 @@ export class ListComponent implements OnInit {
 
   ngOnInit() {
     this.loading = true;
-    this.personService.findAll().subscribe(data => {
-          this.persons = data;
-          this.loading = false;
+    this.personService.findAll().subscribe(res => {
+        this.persons = res;
+        this.loading = false;
     });
   }
 }
