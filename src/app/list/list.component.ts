@@ -10,13 +10,15 @@ import {PersonService} from '../person-service.service';
 export class ListComponent implements OnInit {
 
   persons: Person[];
+  loading = false;
 
   constructor(private personService: PersonService) { }
 
   ngOnInit() {
+    this.loading = true;
     this.personService.findAll().subscribe(data => {
-      this.persons = data;
+          this.persons = data;
+          this.loading = false;
     });
   }
-
 }

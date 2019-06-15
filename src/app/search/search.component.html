@@ -1,35 +1,36 @@
 <div class="container-fluid">
-<div class="card col-md-6">
-  <div class="card-body">
+  <div class="card col-md-6">
+    <div class="card-body">
       <div class="form-group">
         <label for="firstName">First Name</label>
         <input type="text" [(ngModel)]="firstName"
                class="form-control" id="firstName" name="firstName" placeholder="Enter first name"
                required>
       </div>
-    <button
-      class="btn btn-success"
-      type="button"
-      [disabled]="isEmptyFirstName()"
-      (click)="findByFirstName()">Search
-    </button>
-    <div class="form-group">
-      <label for="firstName">Last Name</label>
-      <input type="text" [(ngModel)]="lastName"
-             class="form-control" id="lastName" name="lastName" placeholder="Enter last name"
-             required>
+      <button
+        class="btn btn-success"
+        type="button"
+        [disabled]="isEmptyFirstName()"
+        (click)="findByFirstName()">Search
+      </button>
+      <div class="form-group">
+        <label for="firstName">Last Name</label>
+        <input type="text" [(ngModel)]="lastName"
+               class="form-control" id="lastName" name="lastName" placeholder="Enter last name"
+               required>
+      </div>
+      <button
+        class="btn btn-success"
+        type="button"
+        [disabled]="isEmptyLastName()"
+        (click)="findByLastName()">Search
+      </button>
     </div>
-    <button
-      class="btn btn-success"
-      type="button"
-      [disabled]="isEmptyLastName()"
-      (click)="findByLastName()">Search
-    </button>
   </div>
-</div>
+  <div *ngIf="loading" class="spinner"></div>
   <div class="card col-md-6">
     <div class="card-body">
-  <table *ngIf="persons?.length > 0" class="table table-bordered table-striped">
+    <table *ngIf="persons?.length > 0" class="table table-bordered table-striped">
     <thead>
     <tr>
       <th>First Name</th>
