@@ -12,23 +12,25 @@ export class SearchComponent implements OnInit {
   firstName: string;
   lastName: string;
   persons: Person[];
+  loading = false;
 
   constructor(private personService: PersonService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   findByLastName() {
-    console.log(this.lastName);
+    this.loading = true;
     this.personService.findByLastName(this.lastName.trim()).subscribe(res => {
-      this.persons = res;
+        this.persons = res;
+        this.loading = false;
     });
   }
 
   findByFirstName() {
-    console.log(this.firstName);
+    this.loading = true;
     this.personService.findByFirstName(this.firstName).subscribe(res => {
-      this.persons = res;
+        this.persons = res;
+        this.loading = false;
     });
   }
 
