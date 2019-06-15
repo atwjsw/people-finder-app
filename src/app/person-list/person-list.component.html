@@ -1,0 +1,16 @@
+<div class="card-body">
+  <table class="table table-bordered table-striped">
+    <thead>
+    <tr>
+      <th id="firstName" scope="col">First Name</th>
+      <th id="lastName" scope="col">Last Name</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let person of persons">
+      <td>{{ person.firstName }}</td>
+      <td>{{ person.lastName }}</td>
+    </tr>
+    </tbody>
+  </table>
+</div>

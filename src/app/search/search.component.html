@@ -29,22 +29,7 @@
   </div>
   <div *ngIf="loading" class="spinner"></div>
   <div class="card col-md-6">
-    <div class="card-body">
-    <table *ngIf="persons?.length > 0" class="table table-bordered table-striped">
-    <thead>
-    <tr>
-      <th>First Name</th>
-      <th>Last Name</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr *ngFor="let person of persons">
-      <td>{{ person.firstName }}</td>
-      <td>{{ person.lastName }}</td>
-    </tr>
-    </tbody>
-  </table>
-  <h5 *ngIf="persons?.length === 0">No person found</h5>
-    </div>
+    <app-person-list *ngIf="persons?.length > 0" [persons]="persons"></app-person-list>
+    <h5 *ngIf="persons?.length === 0">No person found</h5>
   </div>
 </div>
