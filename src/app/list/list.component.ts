@@ -17,8 +17,10 @@ export class ListComponent implements OnInit {
   ngOnInit() {
     this.loading = true;
     this.personService.findAll().subscribe(res => {
+      setTimeout(() => {
         this.persons = res;
         this.loading = false;
+      }, 2000);
     });
   }
 }

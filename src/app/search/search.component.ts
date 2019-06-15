@@ -21,8 +21,10 @@ export class SearchComponent implements OnInit {
   findByLastName() {
     this.loading = true;
     this.personService.findByLastName(this.lastName.trim()).subscribe(res => {
+      setTimeout(() => {
         this.persons = res;
         this.loading = false;
+      }, 2000);
     });
   }
 

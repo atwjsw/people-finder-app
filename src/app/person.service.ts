@@ -9,12 +9,10 @@ import {environment} from '../environments/environment';
 })
 export class PersonService {
 
-  // private personsUrl: string;
   private baseUrl = environment.baseUrl;
-  private personsUrl: string;
+  readonly personsUrl: string;
 
   constructor(private http: HttpClient) {
-    // this.personsUrl = 'http://localhost:8080/persons';
     this.personsUrl = this.baseUrl + '/persons';
   }
 
