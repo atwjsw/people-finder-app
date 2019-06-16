@@ -4,27 +4,24 @@ import {Observable} from 'rxjs';
 import {Person} from './person';
 import {environment} from '../environments/environment';
 
+const API_URL = environment.baseUrl;
+
 @Injectable({
   providedIn: 'root'
 })
 export class PersonService {
 
-  private baseUrl = environment.baseUrl;
-  readonly personsUrl: string;
-
-  constructor(private http: HttpClient) {
-    this.personsUrl = this.baseUrl + '/persons';
-  }
+  constructor(private http: HttpClient) {}
 
   public findAll(): Observable<Person[]> {
-    return this.http.get<Person[]>(this.personsUrl);
+    return this.http.get<Person[]>(`${API_URL}/persons`);
   }
 
   public findByFirstName(firstName: string): Observable<Person[]> {
-    return this.http.get<Person[]>(this.personsUrl + '?firstName=' + firstName);
+    return this.http.get<Person[]>(`${API_URL}/persons`, {params: { firstName }});
   }
 
   public findByLastName(lastName: string): Observable<Person[]> {
-    return this.http.get<Person[]>(this.personsUrl + '?lastName=' + lastName);
+    return this.http.get<Person[]>(`${API_URL}/persons`, {params: { lastName }});
   }
 }
